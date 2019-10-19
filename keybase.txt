@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/colettesnow
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://colettesnow.com
+  * I am colettesnow (https://keybase.io/colettesnow) on keybase.
+  * I have a public key ASCWsYHbH4oqv3a9c1mUZc8xv0Ddn26iPIyWgKRexr3UrAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01205f8dbfdb7a832b35679725e920affd81b53eb618a1f538cf0b79cdb8684dc74e0a",
+      "host": "keybase.io",
+      "kid": "012096b181db1f8a2abf76bd73599465cf31bf40dd9f6ea23c8c9680a45ec6bdd4ac0a",
+      "uid": "7bc61ae2a462fb2780de29d182856919",
+      "username": "colettesnow"
+    },
+    "merkle_root": {
+      "ctime": 1565925028,
+      "hash": "44c13bc9f776ff3ddc53d1c8c7986586cfb17704e9bc2e2e4456109c8034b4d910c81c2841d2aee9b15eb5b73c8e23ca67e2c1481d3943b161e365bd5a926c0b",
+      "hash_meta": "157172bf7a27b19c6a8fc71c23914b95d7fde1a09812aaa8a92a6507797c7700",
+      "seqno": 6027362
+    },
+    "service": {
+      "entropy": "H+IxMaE67TIxKhSNXN7sBdyl",
+      "hostname": "colettesnow.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.3.0"
+  },
+  "ctime": 1565925049,
+  "expire_in": 504576000,
+  "prev": "88767ee7ad8f1c165dbba6aa9a47ab752042cf03623290497af9a6dfaed4dbff",
+  "seqno": 21,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEglrGB2x+KKr92vXNZlGXPMb9A3Z9uojyMloCkXsa91KwKp3BheWxvYWTESpcCFcQgiHZ+562PHBZdu6aqmkerdSBCzwNiMpBJevmm367U2//EIOYo6WTROchUgK1XOoXB0SqGVHuFyl6lG6qRA5eZYNzIAgHCo3NpZ8RAqZ8Q0vxjErL/HdIT6jQl9tvls9cEIAsmSUIXcJVyx5BN+CUKCddXas8LzDleWWqUyWK+q0IHdOG9RQHO66k+DqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIDx2OXeJuRlG5zx7eZ6XDrUaqGhROI/mqTflGCBGOEb2o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/colettesnow
+
+==================================================================

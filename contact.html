@@ -1,0 +1,70 @@
+---
+layout: page
+title: Contact Colette Snow
+permalink: /contact.html
+---
+<style>
+input[type=text], input[type=email], input[type=url], input[type=number], input[type=password], input[type=tel], select, textarea {
+	padding: 8px 4px;
+	border-width: 1px;
+	border-style: solid;
+}
+
+input[type=submit], input[type=button], input[type=reset] {
+	border: 0;
+	padding: 10px 20px;
+	font-weight: 500;
+}
+
+.csm_membership_form p label:first-child {
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.csm_membership_form p input[type=text], .csm_membership_form p input[type=tel], .csm_membership_form p input[type=email], .csm_membership_form p input[type=url], .csm_membership_form p input[type=password], .csm_membership_form select {
+	width: 66%;
+	vertical-align: middle;
+	height: inherit !important;
+}
+
+.csm_membership_form p label:not(:first-child) {
+	display: inline-block;
+	width: inherit !important;
+	padding-left: 30%;
+}
+
+.csm_membership_form p label:nth-child(2) {
+	padding-left: 0;
+	margin-left: -4px;
+}
+
+.csm_membership_form p label {
+	vertical-align: top;
+}
+
+.csm_membership_form p.cb label {
+	width: unset;
+}
+
+.csm_membership_form textarea {
+	height: 300px;
+	width: 66%;
+}
+</style>
+<div class="contact">
+    
+<div class="contact_form csm_membership_form">
+	<form action="https://formspree.io/colette@colettesnow.com" method="post">
+       <input type="hidden" name="_next" value="https://colettesnow.com/contact-thankyou.html" />
+		<p><label for="name"><strong>Name</strong></label> <input type="text" name="name" id="name" required="required" /></p>
+		<p><label for="email"><strong>Email</strong></label> <input type="email" name="_replyto" id="email" required="required" /></p>
+		<p><label for="message"><strong>Message</strong></label> <textarea name="message" id="message" required="required"></textarea></p>
+		<input type="text" name="_gotcha" style="display:none" />  
+	  <input type="submit" value="Send Message" />
+		<p>Concerned about security? Send Colette an encrypted message using <a href="https://keybase.io/encrypt#colettesnow">Keybase</a>.</p>
+	</form>
+</div>
+
+<br /><br />
+    </div>
