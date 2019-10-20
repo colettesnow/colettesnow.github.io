@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Email Sent
 permalink: /contact-thankyou.html
 ---

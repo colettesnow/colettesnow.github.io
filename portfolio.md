@@ -2,7 +2,7 @@
 layout: default
 title: Portfolio
 ---
-<a href="/" style="float:right;"><img src="/images/logo.png" height="80" /></a>
+<a href="/" style="float:right;"><img src="/assets/images/logo-only.png" height="80" /></a>
 
 <style>
 /* Portfolio */
