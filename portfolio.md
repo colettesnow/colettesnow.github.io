@@ -77,11 +77,6 @@ a.s-lightbox {
 }
 </style>
 
-<h1>Colette Snow</h1>
-<p>Writer - Developer</p>
-
-<hr style="margin-bottom:20px; color: grey;" />
-
 # Portfolio
 
 ## Projects
