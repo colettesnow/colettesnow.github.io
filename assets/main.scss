@@ -1,0 +1,138 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@import "minima";
+
+/* Header */
+
+.logo { float: right; }
+
+/* Homepage */
+
+.project-grid {
+	display: flex;
+	flex-wrap: wrap;
+	.project {
+		flex: 1 1 47%;
+		padding-right: 20px;
+		vertical-align: middle;
+		.project-logo { text-align: center; }
+	}
+}
+
+/* Portfolio */
+
+.website .client-title {
+	display: block;
+	margin-bottom: 4px;
+}
+
+.website {
+	margin-right: 10px;
+	max-width: 175px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.website:last-child {
+	margin-right: 0;
+}
+
+.website img {
+	height: 120px;
+	width: 175px;
+	margin-bottom: 10px;
+}
+
+/** LIGHTBOX MARKUP **/
+
+.s-lightbox {
+	/** Default lightbox to hidden */
+	display: none;
+	/** Position and style */
+	position: fixed !important;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.s-lightbox img {
+	/** Pad the lightbox image */
+	max-width: 90%;
+	max-height: 80%;
+	margin-top: 2%;
+}
+
+.s-lightbox strong, .s-lightbox p, .s-lightbox small {
+	color: #ffffff;
+}
+
+.s-lightbox:target {
+	/** Remove default browser outline */
+	outline: none;
+	/** Unhide lightbox **/
+	display: block;
+}
+
+a.s-lightbox {
+	text-decoration: none !important;
+}
+
+.s-lightbox span {
+	display: block;
+	color: #FFFFFF !important;
+}
+
+/* Contact form */
+
+input[type=text], input[type=email], input[type=url], input[type=number], input[type=password], input[type=tel], select, textarea {
+	padding: 8px 4px;
+	border-width: 1px;
+	border-style: solid;
+}
+
+input[type=submit], input[type=button], input[type=reset] {
+	border: 0;
+	padding: 10px 20px;
+	font-weight: 500;
+}
+
+.csm_membership_form p label:first-child {
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.csm_membership_form p input[type=text], .csm_membership_form p input[type=tel], .csm_membership_form p input[type=email], .csm_membership_form p input[type=url], .csm_membership_form p input[type=password], .csm_membership_form select {
+	width: 66%;
+	vertical-align: middle;
+	height: inherit !important;
+}
+
+.csm_membership_form p label:not(:first-child) {
+	display: inline-block;
+	width: inherit !important;
+	padding-left: 30%;
+}
+
+.csm_membership_form p label:nth-child(2) {
+	padding-left: 0;
+	margin-left: -4px;
+}
+
+.csm_membership_form p label {
+	vertical-align: top;
+}
+
+.csm_membership_form p.cb label {
+	width: unset;
+}
+
+.csm_membership_form textarea {
+	height: 300px;
+	width: 66%;
+}
