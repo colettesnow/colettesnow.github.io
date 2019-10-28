@@ -18,6 +18,33 @@ layout: default
 
 <p>I can be contacted via my <a href="/contact.html">contact form</a> or by tweeting at me on <a href="https://twitter.com/colette_snow">Twitter</a>.</p>
 
+<h2>Recent Articles</h2>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$.when( $.ready ).then(function() {
+
+    $.getJSON("https://manawithtea.com/feed.json", function(data) {
+        var len = data.posts.length;
+        if (len > 5) {
+            len = 5;
+        }
+        for (var i = 0; i < len; i++) {
+            var formattedDate = new Date(data.posts[i].date);
+            var month = formattedDate.getMonth() + 1;
+            var day = formattedDate.getDay();
+            var year = formattedDate.getFullYear();
+            var date = day + "/" + month + "/" + year;
+
+            $(".posts").append("<li>" + date + ": <a href=\"" + data.posts[i].url + "\">" + data.posts[i].title + "</a></li>");
+        }
+    });
+});
+</script>
+
+<ul class="posts">
+
+</ul>
+
 <h2>Projects</h2>
 
 <div class="project-grid">
