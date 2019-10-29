@@ -30,6 +30,12 @@
 	li { flex: 1 1 30%; margin-right: 3.33%; max-width: 30%; }
 }
 
+.external:after {
+	font-family: FontAwesome;
+	content: ' \f35d';
+	font-size: 8pt;
+}
+
 /* Portfolio */
 
 .website .client-title {
