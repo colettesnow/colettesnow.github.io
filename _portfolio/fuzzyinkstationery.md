@@ -1,5 +1,5 @@
 ---
-title: Fuzzy Ink Stationery
+title: The Creative Family Historian
 thumbnail: https://static.sorrowfulunfounded.com/colettesnow.com/portfolio/artoffam/artoffam_thumb.png
 screenshot: https://static.sorrowfulunfounded.com/colettesnow.com/portfolio/artoffam/artoffam_full.png
 caption: WordPress + Woo Commerce + Elementor website. Development only. Design by Fuzzy Ink Creative
