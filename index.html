@@ -23,7 +23,7 @@ layout: default
 <script>
 $.when( $.ready ).then(function() {
 
-    $.getJSON("https://manawithtea.com/feed.json", function(data) {
+    $.getJSON("https://manawithtea.com/wp-json/wp/v2/posts?per_page=5", function(data) {
         var len = data.posts.length;
         if (len > 5) {
             len = 5;
@@ -35,7 +35,7 @@ $.when( $.ready ).then(function() {
             var year = formattedDate.getFullYear();
             var date = day + "/" + month + "/" + year;
 
-            $(".posts").append("<li>" + date + ": <a href=\"" + data.posts[i].url + "\" class=\"external\">" + data.posts[i].title + "</a></li>");
+            $(".posts").append("<li>" + date + ": <a href=\"" + data.posts[i].link + "\" class=\"external\">" + data.posts[i].title + "</a></li>");
         }
     });
 });
