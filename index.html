@@ -23,12 +23,8 @@ layout: default
 <script>
 $.when( $.ready ).then(function() {
 
-    $.getJSON("https://manawithtea.com/wp-json/wp/v2/posts?per_page=5", function(data) {
-        var len = data.posts.length;
-        if (len > 5) {
-            len = 5;
-        }
-        for (var i = 0; i < len; i++) {
+    $.getJSON("https://manawithtea.com/wp-json/wp/v2/posts?page=1&per_page=5", function(data) {
+        for (var i = 0; i < 5; i++) {
             var formattedDate = new Date(data.posts[i].date);
             var month = formattedDate.getMonth() + 1;
             var day = formattedDate.getDay();
