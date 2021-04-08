@@ -25,13 +25,13 @@ $.when( $.ready ).then(function() {
 
     $.getJSON("https://manawithtea.com/wp-json/wp/v2/posts?page=1&per_page=5", function(data) {
         for (var i = 0; i < 5; i++) {
-            var formattedDate = new Date(data.posts[i].date);
+            var formattedDate = new Date(data[i].date);
             var month = formattedDate.getMonth() + 1;
             var day = formattedDate.getDay();
             var year = formattedDate.getFullYear();
             var date = day + "/" + month + "/" + year;
 
-            $(".posts").append("<li>" + date + ": <a href=\"" + data.posts[i].link + "\" class=\"external\">" + data.posts[i].title + "</a></li>");
+            $(".posts").append("<li>" + date + ": <a href=\"" + data[i].link + "\" class=\"external\">" + data[i].title.rendered + "</a></li>");
         }
     });
 });
