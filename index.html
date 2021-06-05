@@ -23,7 +23,7 @@ layout: default
 <script>
 $.when( $.ready ).then(function() {
 
-    $.getJSON("https://manawithtea.com/wp-json/wp/v2/posts?page=1&per_page=5", function(data) {
+    $.getJSON("https://manawithtea.com/feed.json", function(data) {
         for (var i = 0; i < 5; i++) {
             var formattedDate = new Date(data[i].date);
             var month = formattedDate.getMonth() + 1;
@@ -45,7 +45,7 @@ $.when( $.ready ).then(function() {
 
 <div class="project-grid">
     <div class="project">
-        <p class="project-logo"><a href="https://manawithtea.com/" title="Mana with Tea"><img src="https://manawithtea.com/wp-content/themes/manawithtea/logo.png" height="67" width="146" alt="Mana with Tea logo" /></a></p>
+        <p class="project-logo"><a href="https://manawithtea.com/" title="Mana with Tea"><img src="https://manawithtea.com/css/logo.png" height="67" width="146" alt="Mana with Tea logo" /></a></p>
         <p><a href="https://manawithtea.com/" class="external">Mana with Tea</a> is Colette's anime and video game blog where she posts news, reviews and first impressions.</p>
     </div>
     <div class="project">
