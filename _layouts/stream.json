@@ -1,0 +1,8 @@
+{
+    "guid": "{{ page.url }}",
+    "title": "{{ page.title }}",
+    "type": "{{ page.type }}",
+    "date": "{{ page.date }}",
+    "image":  "{{ page.image }}",
+    "content": {{ content | jsonify }}
+}
