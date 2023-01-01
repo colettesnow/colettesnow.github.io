@@ -2,7 +2,13 @@
     "guid": "{{ page.url }}",
     "title": "{{ page.title }}",
     "type": "{{ page.type }}",
+    {%- if page.link %}
+    "link": {
+        "title": {{ page.link.link_title | jsonify }},
+        "url": {{ page.link.link_url | jsonify }}
+    },
+    {%- endif %}
     "date": "{{ page.date }}",
-    "image":  "{{ page.image }}",
+    {%- if page.image %}"image":  "{{ page.image }}",{% endif %}
     "content": {{ content | jsonify }}
 }

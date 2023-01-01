@@ -13,7 +13,13 @@ title: "Stream"
     "title": "{{ post.title }}",
     "type": "{{ post.type }}",
     "date": "{{ post.date | date_to_rfc822 }}",
-    "image":  "{{ post.image }}",
+    {%- if page.image %}"image":  "{{ post.image }}",{% endif %}
+    {%- if post.link %}
+    "link": {
+        "title": {{ post.link.link_title | jsonify }},
+        "url": {{ post.link.link_url | jsonify }}
+    },
+    {%- endif %}
     "links": {
         "self": "{{ post.url | absolute_url }}"
     },
