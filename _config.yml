@@ -33,7 +33,7 @@ collections:
     layout: "portfolio"
   microposts:
     output: true
-    permalink: /stream/:title/
+    permalink: /stream/:title.json
     layout: "stream"
 
 # Exclude from processing.
