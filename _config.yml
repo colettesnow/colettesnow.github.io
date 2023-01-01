@@ -31,6 +31,10 @@ collections:
     output: false
     permalink: /category/:title/
     layout: "portfolio"
+  microposts:
+    output: true
+    permalink: /stream/:title/
+    layout: "stream"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

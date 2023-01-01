@@ -152,3 +152,17 @@ input[type=submit], input[type=button], input[type=reset] {
 	height: 300px;
 	width: 66%;
 }
+
+.micro_date {
+	font-size: small;
+}
+
+.micro-post {
+	padding: 20px 20px;
+	margin: 0 -20px;
+	border-bottom: 1px solid #cfcfcf83;
+}
+
+.micro-post:last-child { border-bottom: 0; }
+
+.micro-post p:first-child { margin-top: 0; }
