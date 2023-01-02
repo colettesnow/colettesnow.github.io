@@ -4,9 +4,9 @@ title: "Stream"
 ---
 [
 {%- assign count = 0 -%}
-{%- assign total = site.microposts.size -%}
+{%- assign total = site.posts.size -%}
 {%- assign mposts = site.microposts %}
-{%- for post in mposts reversed limit: 100 %}
+{%- for post in site.posts limit: 100 %}
 {%- assign count = count | plus: 1 %}
 {
     "guid": "{{ post.slug | slugify }}",
