@@ -7,16 +7,18 @@ media_folder: "images/uploads"
 logo_url: https://colettesnow.com/assets/images/logo-only.png
 
 collections:
-  - name: "microposts" # Used in routes, e.g., /admin/collections/blog
-    label: "Stream" # Used in the UI
-    folder: "_microposts" # The path to the folder where the documents are stored
+  - name: "posts" # Used in routes, e.g., /admin/collections/blog
+    label: "Posts" # Used in the UI
+    folder: "_posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "stream"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Type", name: "type", widget: "select", options: ["text", "link", "image", "chat", "quote", "audio", "video"]}
+      - {label: "Type", name: "type", widget: "select", options: ["post","text", "link", "image", "chat", "quote", "audio", "video"]}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - {label: "Link", name: "link", widget: "object", required: false, collapsed: true, fields: [{label: "Link Title", name: "link_title", widget: "string"}, {label: "Link URL", name: "link_url", widget: "string"}]}
+      - {label: "YouTube Video ID", name: "video_id", widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "list", allow_add: true}
       - {label: "Body", name: "body", widget: "markdown"}

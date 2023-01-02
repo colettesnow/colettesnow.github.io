@@ -31,7 +31,7 @@ collections:
     output: false
     permalink: /category/:title/
     layout: "portfolio"
-  microposts:
+  posts:
     output: true
     permalink: /stream/:title.json
     layout: "stream"

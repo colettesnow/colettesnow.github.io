@@ -1,13 +1,27 @@
 ---
 layout: default
 title: "Stream"
+paginate: true
 ---
 
-{% assign mposts = site.microposts %}
-{% for post in mposts limit: 10 %}
+<h1>Stream</h1>
+{% assign posts = site.posts | where_exp: "item", "item.type != 'post'" %}
+{% for post in posts limit: 10 %}
 
     <div class="micro-post">
         {{ post.content }}
+
+        {% if post.link %}
+            {% if post.type == "video" %}
+                <p><iframe width="560" height="315"
+                src="https://www.youtube.com/embed/{{ post.video_id | uri_escape }}" frameborder="0" 
+                allowfullscreen></iframe></p>
+            {% else %}
+                <div class="link">
+                    <p><a href="{{ post.link.link_url }}" target="_blank">{{ post.link.link_title }}</a></p>
+                </div>
+            {% endif %}
+        {% endif %}
 
         <a href="{{ post.url }}" class="micro_date" role="permalink">{{ post.date | date_to_long_string }}</a>
     </div>
