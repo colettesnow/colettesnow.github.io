@@ -1,12 +1,11 @@
 ---
 layout: default
 title: "Stream"
-paginate: true
 ---
 
 <h1>Stream</h1>
-{% assign posts = site.posts | where_exp: "item", "item.type != 'post'" %}
-{% for post in posts limit: 10 %}
+
+{% for post in paginator.posts limit: 10 %}
 
     <div class="micro-post">
         {{ post.content }}
@@ -27,3 +26,22 @@ paginate: true
     </div>
 
 {% endfor %}
+
+<!-- Pagination links -->
+<div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">
+        Previous
+      </a>
+    {% else %}
+      <span class="previous">Previous</span>
+    {% endif %}
+    <span class="page_number ">
+      Page: {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    {% else %}
+      <span class="next ">Next</span>
+    {% endif %}
+  </div>

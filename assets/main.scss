@@ -166,3 +166,7 @@ input[type=submit], input[type=button], input[type=reset] {
 .micro-post:last-child { border-bottom: 0; }
 
 .micro-post p:first-child { margin-top: 0; }
+
+.pagination { text-align: center; height: 30px; margin-top: 30px; }
+.pagination .previous { float: left; }
+.pagination .next { float: right; }
