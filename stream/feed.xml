@@ -1,0 +1,41 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>{{ site.title }} - Stream</title>
+  <atom:link href="{{ "stream/feed.xml" | absolute_url }}" rel="self" type="application/atom+xml" />
+  <link>{{ site.url }}</link>
+  <description>Things I found interesting or otherwise felt like sharing. Similar to a Twitter feed.</description>
+  <language>en-au</language>
+  <generator>Jekyll v{{ jekyll.version }}</generator>
+  <copyright>
+    Copyright 2018-2023 Colette Snow. The contents of this feed are available for non-commercial use only.
+  </copyright>
+{%- assign count = 0 -%}
+{%- assign total = site.posts.size -%}
+{%- for post in site.posts limit: 100 %}
+{%- assign count = count | plus: 1 %}
+  {% if post.link %}
+    {% capture link_post %}
+      {% assign short_link = post.link.link_url | split: "/" %}
+      {% assign short_link = short_link[2] | remove: "www." %}
+      <p><a href="{{ post.link.link_url }}">{% if post.link.link_title %}{{ post.link.link_title | replace: "\&\#8211;", "-" }} - {% endif %}{{ short_link }}</a></p>
+    {% endcapture %}
+  {% endif %}
+  {% if post.type == 'video' %}
+    {% capture link_post %}
+      <p><a href="https://www.youtube.com/watch?v={{ post.video_id }}"><img src="https://i3.ytimg.com/vi/{{ post.video_id }}/maxresdefault.jpg" width="560" height="315" /></a></p>
+    {% endcapture %}
+  {% endif %}
+  <item>
+    <title>{{ post.title }}</title>
+    <link>{{ post.url | absolute_url }}</link>
+    <guid>{{ post.url | absolute_url }}</guid>
+    <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+    <description>{{ post.content | xml_escape }}{{ link_post | xml_escape }}</description>
+  </item>
+{%- endfor %}
+</channel>
+</rss>
