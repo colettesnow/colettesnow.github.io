@@ -18,23 +18,25 @@ layout: null
 {%- for post in site.posts limit: 100 %}
 {%- assign count = count | plus: 1 %}
   {% if post.link %}
+    {% unless post.link.link_url contains post.video_id %}
     {% capture link_post %}
       {% assign short_link = post.link.link_url | split: "/" %}
       {% assign short_link = short_link[2] | remove: "www." %}
       <p><a href="{{ post.link.link_url }}">{% if post.link.link_title %}{{ post.link.link_title | replace: "\&\#8211;", "-" }} - {% endif %}{{ short_link }}</a></p>
     {% endcapture %}
+    {% endunless %}
   {% endif %}
   {% if post.type == 'video' %}
-    {% capture link_post %}
+    {% capture video_post %}
       <p><a href="https://www.youtube.com/watch?v={{ post.video_id }}"><img src="https://i3.ytimg.com/vi/{{ post.video_id }}/maxresdefault.jpg" width="560" height="315" /></a></p>
     {% endcapture %}
   {% endif %}
   <item>
     <title>{{ post.title }}</title>
-    <link>{{ post.url | absolute_url }}</link>
+    <link>{{ post.url | prepend: "stream/view.html#!" | absolute_url }}</link>
     <guid>{{ post.url | absolute_url }}</guid>
     <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-    <description>{{ post.content | xml_escape }}{{ link_post | xml_escape }}</description>
+    <description>{{ post.content | xml_escape }}{{ link_post | xml_escape }}{{ video_post | xml_escape }}</description>
   </item>
 {%- endfor %}
 </channel>
