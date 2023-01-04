@@ -1,0 +1,68 @@
+---
+layout: default
+title: View
+---
+<div class="stream_content"></div>
+<div class="micro_date"></div>
+
+<script crossorigin="anonymous">
+    var hash;
+    function load_entry()
+    {
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit'};
+        console.log(window.location.hash);
+        if (hash != window.location.href.split('#!')[1]) {
+
+            $.getJSON("../" + window.location.href.split('#!')[1], function(data) {
+                var date = new Date(data.date);
+                document.title = data.title + " | {{ site.title }}";
+                $(".stream_content").html(data.content.rendered);
+                $(".micro_date").html(date.toLocaleDateString("en-AU", options));
+
+                hash = window.location.href.split('#!')[1];
+
+                if (data.previous) {
+                    $(".previous").html("&laquo; " + data.previous.title);
+                    $(".previous").attr("href", data.previous.url);
+                    $(".previous").on("click", function() {
+                        hash = false;
+                        window.location.hash = "#!" + data.previous.guid;
+                        load_entry()
+                        });
+                } else {
+                    $(".previous").html("");
+                    $(".previous").attr("href", "");
+                    $(".previous").unbind();
+                }
+
+                if (data.next) {
+                    $(".next").html(data.next.title + " &raquo;");
+                    $(".next").attr("href", data.next.url);
+                    $(".next").on("click", function() {
+                        hash = false;
+                        window.location.hash = "#!" + data.next.guid;
+                        load_entry()
+                        });
+                } else {
+                    $(".next").html("");
+                    $(".next").attr("href", "");
+                    $(".next").unbind();
+                }
+            });
+
+        }
+    }
+
+    $.when( $.ready ).then(function() {
+
+        
+
+        load_entry();
+
+    });
+</script>
+
+<div class="pagination">
+      <a class="previous"></a>
+      <a class="next"></a>
+</div>
