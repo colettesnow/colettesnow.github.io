@@ -1,7 +1,22 @@
+{%- if page.link %}
+{%- unless page.link.link_url contains page.video_id %}
+{%- capture link_post %}
+  {% assign short_link = page.link.link_url | split: "/" %}
+  {% assign short_link = short_link[2] | remove: "www." -%}
+  <p><a href="{{ page.link.link_url }}">{% if page.link.link_title %}{{ page.link.link_title | replace: "\&\#8211;", "-" }} - {% endif %}{{ short_link }}</a></p>
+{%- endcapture %}
+{%- endunless %}
+{%- endif %}
+{%- if page.type == 'video' %}
+{%- capture video_post -%}
+  <p><a href="https://www.youtube.com/watch?v={{ page.video_id }}"><img src="https://i3.ytimg.com/vi/{{ page.video_id }}/maxresdefault.jpg" width="560" height="315" /></a></p>
+{%- endcapture -%}
+{%- endif -%}
 {
     "guid": "{{ page.url }}",
     "title": "{{ page.title }}",
     "type": "{{ page.type }}",
+    "url": {{ page.url | prepend: "stream/view.html#!" | absolute_url | jsonify }},
     {%- if page.link %}
     "link": {
         "title": {{ page.link.link_title | jsonify }},
@@ -10,5 +25,21 @@
     {%- endif %}
     "date": "{{ page.date }}",
     {%- if page.image %}"image":  "{{ page.image }}",{% endif %}
-    "content": {{ content | jsonify }}
+    {%- if page.previous.url %}
+    "previous": {
+        "title": {{ page.previous.title | jsonify }},
+        "url": {{ page.previous.url | prepend: "stream/view.html#!" | absolute_url | jsonify }},
+        "guid": {{ page.previous.url | jsonify }}
+    },
+    {%- endif -%}
+    {%- if page.next.url %}
+    "next": {
+        "title": {{ page.next.title | jsonify }},
+        "url": {{ page.next.url | prepend: "stream/view.html#!" | absolute_url | jsonify }},
+        "guid": {{ page.next.url | jsonify }}
+    },
+    {%- endif %}
+    "content": {
+        "rendered": {{ content | append: link_post | append: video_post | strip | jsonify }}
+    }
 }

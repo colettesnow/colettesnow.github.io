@@ -8,6 +8,20 @@ title: "Stream"
 {%- assign mposts = site.microposts %}
 {%- for post in site.posts limit: 100 %}
 {%- assign count = count | plus: 1 %}
+{%- if post.link %}
+{%- unless post.link.link_url contains post.video_id %}
+{%- capture link_post %}
+  {% assign short_link = post.link.link_url | split: "/" %}
+  {% assign short_link = short_link[2] | remove: "www." -%}
+  <p><a href="{{ post.link.link_url }}">{% if post.link.link_title %}{{ post.link.link_title | replace: "\&\#8211;", "-" }} - {% endif %}{{ short_link }}</a></p>
+{%- endcapture %}
+{%- endunless %}
+{%- endif %}
+{%- if post.type == 'video' %}
+{%- capture video_post -%}
+  <p><a href="https://www.youtube.com/watch?v={{ post.video_id }}"><img src="https://i3.ytimg.com/vi/{{ post.video_id }}/maxresdefault.jpg" width="560" height="315" /></a></p>
+{%- endcapture %}
+{% endif %}
 {
     "guid": "{{ post.slug | slugify }}",
     "title": "{{ post.title }}",
@@ -24,7 +38,7 @@ title: "Stream"
         "self": "{{ post.url | absolute_url }}"
     },
     "content": {
-        "rendered": {{ post.content | jsonify }}
+        "rendered": {{ post.content | append: link_post | append: video_post | strip | jsonify }}
     }
 }{%- if count != 10 and count != total -%},
 {%- endif -%}
