@@ -36,6 +36,8 @@ paginate_path: "/stream/page:num/"
 
 include:
   - _headers
+  - robots.txt
+  - ads.txt
   
 collections:
   portfolio:
