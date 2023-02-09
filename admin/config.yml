@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: colettesnow/colettesnow.github.io
   branch: master # Branch to update (optional; defaults to master)
+  base_url: https://colettesnow.com
+  auth_endpoint: /api/auth
 
 site_url: https://colettesnow.com
 media_folder: "images/uploads"
