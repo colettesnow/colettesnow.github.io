@@ -1,2 +1,10 @@
-/:placeholder/:placeholder/:placeholder/:placeholder
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+
+/:year/:month/:day/:title
     Content-Type: application/json
+
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
