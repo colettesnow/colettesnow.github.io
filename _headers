@@ -11,3 +11,7 @@ https://:project.pages.dev/*
   
 /.well-known/openpgpkey/*
   Access-Control-Allow-Origin: *
+
+/public.pgp
+  Content-Type: text/plain
+  Access-Control-Allow-Origin: *
