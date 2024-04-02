@@ -22,6 +22,7 @@ include:
   - _headers
   - robots.txt
   - ads.txt
+  - .well-known
   
 collections:
   portfolio:
