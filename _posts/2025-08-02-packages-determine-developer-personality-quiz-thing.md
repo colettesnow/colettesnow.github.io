@@ -17,6 +17,6 @@ tags:
   - linux
   - macos
 ---
-A personality quiz based on what Homebrew packages I had installed. [https://brewfiles.com/brew/pzFu8v5cqsSMcn0BaQdo/](https://t.co/G1GZcxuaBv)
+A personality quiz based on what Homebrew packages I had installed.
 
 ![Image summarising what Homebrew packages Colette has installed, based on packages identified her as a architect/developer. Colette has 82 total packages.](/images/uploads/screenshot-2025-08-02-at-12.21.35_pm.png)
