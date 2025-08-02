@@ -5,7 +5,7 @@ type: image
 date: 2025-08-02T02:28:47.902Z
 thumbnail: /images/uploads/screenshot-2025-08-02-at-12.21.35_pm.png
 link:
-  link_url: "[https://brewfiles.com/brew/pzFu8v5cqsSMcn0BaQdo/](https://t.co/G1GZcxuaBv)"
+  link_url: "https://brewfiles.com/brew/pzFu8v5cqsSMcn0BaQdo/"
   link_title: Brewfiles
 tags:
   - developer
