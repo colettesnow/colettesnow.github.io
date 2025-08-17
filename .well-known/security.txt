@@ -1,0 +1,5 @@
+Contact: https://colettesnow.com/contact
+Expires: 2028-01-01T10:10:00Z
+Encryption: https://colettesnow.com/public.pgp
+Canonical: https://colettesnow.com/.well-known/security.txt
+Preferred-Languages: en
