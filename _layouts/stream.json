@@ -16,7 +16,7 @@
     "guid": "{{ page.url }}",
     "title": "{{ page.title }}",
     "type": "{{ page.type }}",
-    "url": {{ page.url | prepend: "stream/view.html#!" | absolute_url | jsonify }},
+    "url": {{ page.url | prepend: "stream/view#!" | absolute_url | jsonify }},
     {%- if page.link %}
     "link": {
         "title": {{ page.link.link_title | jsonify }},
@@ -28,14 +28,14 @@
     {%- if page.previous.url %}
     "previous": {
         "title": {{ page.previous.title | jsonify }},
-        "url": {{ page.previous.url | prepend: "stream/view.html#!" | absolute_url | jsonify }},
+        "url": {{ page.previous.url | prepend: "stream/view#!" | absolute_url | jsonify }},
         "guid": {{ page.previous.url | jsonify }}
     },
     {%- endif -%}
     {%- if page.next.url %}
     "next": {
         "title": {{ page.next.title | jsonify }},
-        "url": {{ page.next.url | prepend: "stream/view.html#!" | absolute_url | jsonify }},
+        "url": {{ page.next.url | prepend: "stream/view#!" | absolute_url | jsonify }},
         "guid": {{ page.next.url | jsonify }}
     },
     {%- endif %}

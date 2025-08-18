@@ -25,7 +25,7 @@ permalink: /stream
             {% endif %}
         {% endif %}
 
-        <a href="{{ post.url | prepend: "stream/view.html#!" | absolute_url }}" class="micro_date" role="permalink">{{ post.date | date_to_long_string }}</a>
+        <a href="{{ post.url | prepend: "stream/view#!" | absolute_url }}" class="micro_date" role="permalink">{{ post.date | date_to_long_string }}</a>
     </div>
 
 {% endfor %}
